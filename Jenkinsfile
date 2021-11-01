@@ -3,7 +3,7 @@ node {
       stage('Clone repository') { 
             withCredentials([string(credentialsId: 'dockerpws', variable: 'TOKEN')]) 
             {
-                  bat '''docker login -u 'sivasankarvadlamani' -p '<$TOKEN>' '''
+                  bat '''docker login -u 'sivasankarvadlamani' -p '$TOKEN' '''
             }
            
             checkout scm    
