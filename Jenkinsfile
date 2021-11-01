@@ -6,9 +6,9 @@ node {
             checkout scm    
       }  
       stage('Compile and build application') {
-        withMaven(maven : 'apache-maven-3.6.1') {
+       
                 bat'mvn clean install'
-            }
+          
 
     }
       stage('Build image') {         
