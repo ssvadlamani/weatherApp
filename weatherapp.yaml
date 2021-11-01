@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: weatherApp
+  labels: 
+   app: weatherApp
+spec: 
+  replicas: 1
+  selector: 
+    matchLabels: 
+      app: weatherApp
+  template: 
+    metadata: 
+      labels: 
+        app: weatherApp
+    spec: 
+      containers: 
+        - image: sivasankarvadlamani/weatherApp
+          name: weatherApp
+          ports: 
+            - containerPort: 8080
