@@ -1,11 +1,9 @@
 node {    
       def app     
       stage('Clone repository') { 
-            withCredentials([string(credentialsId: 'dockerpws', variable: 'TOKEN')]) 
-            {
-                  bat '''docker login -u 'sivasankarvadlamani' -p '$TOKEN' '''
-            }
-           
+            
+       bat 'docker login --username sivasankarvadlamani --password-stdin  < ~/password https://registry.hub.docker.com'
+            
             checkout scm    
       }  
       stage('Compile and build application') {
