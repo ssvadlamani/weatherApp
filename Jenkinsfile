@@ -2,7 +2,7 @@ node {
       def app     
       stage('Clone repository') { 
             
-       bat 'docker login --username sivasankarvadlamani --password-stdin < ~/password.txt https://registry.hub.docker.com'
+       bat 'type ~/password.txt | docker login --username sivasankarvadlamani --password-stdin'
             
             checkout scm    
       }  
