@@ -15,7 +15,7 @@ node {
            
        stage('Push image') {
              
-       bat 'cat ~/my_password.txt | docker login --username sivasankarvadlamani --password-stdin https://registry.hub.docker.com' 
+       bat 'Get-Content password.txt  | docker login --username sivasankarvadlamani --password-stdin https://registry.hub.docker.com' 
        bat 'docker push sivasankarvadlamani/weatherapp:build'
    }
 }       
