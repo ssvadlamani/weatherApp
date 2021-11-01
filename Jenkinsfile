@@ -1,7 +1,10 @@
 node {    
       def app     
-      stage('Clone repository') {               
-              bat 'Get-Content password.txt | docker login --username sivasankarvadlamani --password-stdin https://registry.hub.docker.com' 
+      stage('Clone repository') { 
+            withCredentials([string(credentialsId: 'dockerpws', variable: 'TOKEN')]) 
+            {
+                  bat '''docker login -u 'sivasankarvadlamani' -p '<$TOKEN>' '''
+              
            
             checkout scm    
       }  
