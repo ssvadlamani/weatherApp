@@ -9,7 +9,6 @@ node {
                 bat 'mvn clean install -Dmaven.test.skip=true'
     }
       stage('Build image') {  
-            bat 'cat ~/my_password.txt | docker login --username sivasankarvadlamani --password-stdin https://registry.hub.docker.com' 
             bat 'docker build -t weatherapp .'
             bat 'docker tag weatherapp sivasankarvadlamani/weatherapp'   
        } 
@@ -18,7 +17,5 @@ node {
              
        bat 'cat ~/my_password.txt | docker login --username sivasankarvadlamani --password-stdin https://registry.hub.docker.com' 
        bat 'docker push sivasankarvadlamani/weatherapp:build'
-      
-      }    
    }
 }       
