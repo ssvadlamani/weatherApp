@@ -17,7 +17,7 @@ Example Spring Boot application and CI/CD pipeline showing how to run a Java
 
 ## CI/CD pipeline 
 
-The Semaphore pipeline is configured to:
+The Weather pipeline is configured to:
 
   1. Clone project
   2. Build the project
@@ -30,6 +30,6 @@ The Semaphore pipeline is configured to:
 This project is set up using Maven. Build configuration can be found at `pom.xml`.
 
 ##### Running the project
-
-  `mvn spring-boot:run`
-
+ 
+  `mvn clean install -Dmaven.test.skip=true`
+ `mvn spring-boot:run`
