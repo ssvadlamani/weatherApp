@@ -1,4 +1,4 @@
-# WeatherApp CI/CD pipeline using Java Spring
+# WeatherApp with CI/CD pipeline
 
 Weather application with CI/CD
 
@@ -10,7 +10,7 @@ Weather application with CI/CD
 ### Endpoints
 
  - `/weather/<location>"` rest endpoint, get the weather report.
- Ex: http://localhost:8080/weather/berlin
+ -  Ex: http://localhost:8080/weather/berlin
 
 
 ## CI/CD pipeline 
