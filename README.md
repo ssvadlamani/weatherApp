@@ -1,8 +1,6 @@
 # WeatherApp CI/CD pipeline using Java Spring
 
-Example Spring Boot application and CI/CD pipeline showing how to run a Java
-
-## Application overview
+Weather application with CI/CD
 
 ### Features
 
