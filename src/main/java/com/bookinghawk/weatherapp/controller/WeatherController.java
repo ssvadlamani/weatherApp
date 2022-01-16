@@ -1,8 +1,12 @@
 package com.bookinghawk.weatherapp.controller;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties.Pathmatch;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +34,7 @@ public class WeatherController {
 	 * @return
 	 */
 	@GetMapping("/weather/{location}")
-	public ResponseEntity<JsonResponse> getWeather(@PathVariable("location")String location) {
+	public ResponseEntity<JsonResponse> getWeather(@PathVariable("location")@Valid @NotNull(message = "Client id is mandatory")String location,Pathmatch p) {
 		LOGGER.info("BEGIN GET WEATHER DETAILS FOR : "+location);
 		JsonResponse response= weatherService.getWeather(location);
 		LOGGER.info("END GET WEATHER DETAILS FOR : "+location);
